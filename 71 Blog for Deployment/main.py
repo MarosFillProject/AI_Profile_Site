@@ -12,6 +12,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 import os
 import smtplib
+from dotenv import load_dotenv
+load_dotenv()
 
 '''
 Make sure the required packages are installed: 
