@@ -1,0 +1,40 @@
+.strip {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-block: 1px solid var(--border);
+  background: var(--bg-surface);
+  padding-block: 1rem;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+
+  &__track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+  }
+
+  &__item {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+
+    &::after {
+      content: '◆';
+      margin-left: 3rem;
+      font-size: 0.5rem;
+      color: var(--accent);
+      opacity: 0.5;
+      vertical-align: middle;
+    }
+  }
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}

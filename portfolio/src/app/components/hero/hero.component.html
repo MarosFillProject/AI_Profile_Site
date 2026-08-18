@@ -1,0 +1,93 @@
+<section class="hero">
+  <div class="hero__content container">
+    <div class="hero__badge" appReveal>
+      <span class="hero__badge-dot"></span>
+      Available for opportunities
+    </div>
+
+    <h1 class="hero__title" appReveal>
+      <span class="hero__title-line">{{ profile.name.split(' ')[0] }}</span>
+      <span class="hero__title-line hero__title-line--accent">{{ profile.name.split(' ')[1] }}</span>
+    </h1>
+
+    <p class="hero__role" appReveal>{{ profile.title }}</p>
+
+    <p class="hero__tagline" appReveal>{{ profile.tagline }}</p>
+
+    <div class="hero__meta" appReveal>
+      <span class="hero__meta-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 21s7-4.35 7-10a7 7 0 1 0-14 0c0 5.65 7 10 7 10z"/>
+          <circle cx="12" cy="11" r="2.5"/>
+        </svg>
+        {{ profile.location }}
+      </span>
+      <span class="hero__meta-divider"></span>
+      <span class="hero__meta-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+        </svg>
+        {{ profile.yearsExperience }}+ years experience
+      </span>
+      <span class="hero__meta-divider"></span>
+      <span class="hero__meta-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/>
+        </svg>
+        PhD in Logistics
+      </span>
+    </div>
+
+    <div class="hero__actions" appReveal>
+      <a href="#journey" class="btn btn--primary">
+        View my journey
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </a>
+      <a href="#portfolio" class="btn btn--ghost">Portfolio</a>
+      <a
+        [href]="profile.linkedin"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn--ghost"
+      >
+        LinkedIn
+      </a>
+    </div>
+
+    <div class="hero__stats" appReveal>
+      <div class="hero__stat">
+        <span class="hero__stat-value">9+</span>
+        <span class="hero__stat-label">Years building web apps</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-value">5</span>
+        <span class="hero__stat-label">Publications</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-value">4</span>
+        <span class="hero__stat-label">Languages</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-value">Global</span>
+        <span class="hero__stat-label">Teams & clients</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__visual" aria-hidden="true">
+    <div class="hero__ring hero__ring--1"></div>
+    <div class="hero__ring hero__ring--2"></div>
+    <div class="hero__ring hero__ring--3"></div>
+    <div class="hero__code">
+      <span class="hero__code-line"><span class="kw">const</span> engineer = {{ '{' }}</span>
+      <span class="hero__code-line">&nbsp;&nbsp;stack: [<span class="str">'Angular'</span>, <span class="str">'Vue'</span>, <span class="str">'Node'</span>],</span>
+      <span class="hero__code-line">&nbsp;&nbsp;focus: <span class="str">'UI/UX'</span>,</span>
+      <span class="hero__code-line">&nbsp;&nbsp;phd: <span class="bool">true</span></span>
+      <span class="hero__code-line">{{ '}' }};</span>
+    </div>
+  </div>
+</section>

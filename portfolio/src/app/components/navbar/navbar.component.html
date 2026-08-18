@@ -1,0 +1,40 @@
+<nav class="nav" [class.nav--scrolled]="scrolled()" [class.nav--open]="menuOpen()">
+  <div class="nav__inner container">
+    <a href="#" class="nav__brand" (click)="closeMenu()">
+      <span class="nav__brand-mark">MF</span>
+      <span class="nav__brand-name">{{ profile.name.split(' ')[0] }}</span>
+    </a>
+
+    <button
+      class="nav__toggle"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle navigation"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav__links">
+      @for (link of links; track link.href) {
+        <li>
+          <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+        </li>
+      }
+      <li>
+        <a
+          [href]="profile.linkedin"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav__cta"
+          (click)="closeMenu()"
+        >
+          LinkedIn
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

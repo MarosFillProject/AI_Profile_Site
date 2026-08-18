@@ -1,0 +1,186 @@
+.about {
+  position: relative;
+  z-index: 1;
+  padding-block: var(--section-gap);
+
+  &__header {
+    margin-bottom: 4rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    padding: 2rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: border-color 0.3s, transform 0.3s var(--ease-out);
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    &--skills {
+      grid-row: span 2;
+
+      @media (max-width: 768px) {
+        grid-row: auto;
+      }
+    }
+
+    &--accent {
+      background: linear-gradient(135deg, var(--bg-elevated), rgba(0, 229, 184, 0.04));
+      border-color: var(--border-accent);
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+
+      svg {
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+
+    li {
+      padding: 0.4rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      transition: all 0.25s;
+
+      &:hover {
+        color: var(--accent);
+        border-color: var(--border-accent);
+        background: var(--accent-dim);
+      }
+    }
+  }
+
+  &__languages {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border);
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__lang-name {
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  &__lang-level {
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+  }
+
+  &__education {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    li {
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__edu-degree {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+  }
+
+  &__edu-school {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  &__edu-period {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+  }
+
+  &__award {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  &__pubs {
+    &-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      li {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+        padding-left: 0.75rem;
+        border-left: 2px solid var(--border-accent);
+      }
+    }
+  }
+}

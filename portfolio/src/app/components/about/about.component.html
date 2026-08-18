@@ -1,0 +1,85 @@
+<section id="about" class="about">
+  <div class="container">
+    <div class="about__header">
+      <p class="section-label" appReveal>About</p>
+      <h2 class="section-title" appReveal>Engineering at the intersection of craft & scale</h2>
+      <p class="section-subtitle" appReveal>{{ profile.summary }}</p>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__card about__card--skills" appReveal>
+        <h3 class="about__card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+          Core Technologies
+        </h3>
+        <ul class="about__skills">
+          @for (skill of profile.skills; track skill) {
+            <li>{{ skill }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="about__card" appReveal>
+        <h3 class="about__card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          Languages
+        </h3>
+        <ul class="about__languages">
+          @for (lang of profile.languages; track lang.name) {
+            <li>
+              <span class="about__lang-name">{{ lang.name }}</span>
+              <span class="about__lang-level">{{ lang.level }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="about__card" appReveal>
+        <h3 class="about__card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/>
+          </svg>
+          Education
+        </h3>
+        <ul class="about__education">
+          @for (edu of profile.education; track edu.institution + edu.period) {
+            <li>
+              <div class="about__edu-degree">{{ edu.degree }}@if (edu.field) { — {{ edu.field }} }</div>
+              <div class="about__edu-school">{{ edu.institution }}</div>
+              <div class="about__edu-period">{{ edu.period }}</div>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="about__card about__card--accent" appReveal>
+        <h3 class="about__card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          Recognition & Research
+        </h3>
+        <div class="about__awards">
+          @for (award of profile.awards; track award) {
+            <p class="about__award">{{ award }}</p>
+          }
+        </div>
+        <div class="about__pubs">
+          <span class="about__pubs-label">Selected Publications</span>
+          <ul>
+            @for (pub of profile.publications.slice(0, 3); track pub) {
+              <li>{{ pub }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

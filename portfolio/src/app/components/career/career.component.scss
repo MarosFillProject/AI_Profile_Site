@@ -1,0 +1,179 @@
+.career {
+  position: relative;
+  z-index: 1;
+  padding-block: var(--section-gap);
+  background: linear-gradient(180deg, transparent, rgba(0, 229, 184, 0.02) 50%, transparent);
+
+  &__header {
+    margin-bottom: 4rem;
+  }
+
+  &__timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: linear-gradient(
+        180deg,
+        var(--accent),
+        var(--border) 30%,
+        var(--border) 70%,
+        transparent
+      );
+    }
+  }
+
+  &__entry {
+    position: relative;
+    padding-bottom: 2.5rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &--highlight .career__card {
+      border-color: var(--border-accent);
+      background: linear-gradient(135deg, var(--bg-surface), rgba(0, 229, 184, 0.03));
+    }
+
+    &--highlight .career__dot {
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    left: -2rem;
+    top: 1.5rem;
+    width: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--bg-elevated);
+    border: 2px solid var(--text-muted);
+    transition: all 0.3s;
+  }
+
+  &__card {
+    padding: 1.75rem 2rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: border-color 0.3s, transform 0.3s var(--ease-out);
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: translateX(4px);
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+
+      @media (max-width: 640px) {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
+  }
+
+  &__role {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.2rem;
+  }
+
+  &__company {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    flex-shrink: 0;
+
+    @media (max-width: 640px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__period {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  &__location {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  &__desc {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+
+    li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      padding-left: 1rem;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.65em;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--text-muted);
+      }
+    }
+  }
+
+  &__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+
+    span {
+      padding: 0.25rem 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.03em;
+      color: var(--text-muted);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+  }
+}

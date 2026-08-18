@@ -1,0 +1,10 @@
+<div class="strip" aria-hidden="true">
+  <div class="strip__track">
+    @for (item of items; track item) {
+      <span class="strip__item">{{ item }}</span>
+    }
+    @for (item of items; track item + '-dup') {
+      <span class="strip__item">{{ item }}</span>
+    }
+  </div>
+</div>

@@ -1,0 +1,111 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  padding-block: var(--section-gap) 3rem;
+  border-top: 1px solid var(--border);
+
+  &__cta {
+    text-align: center;
+    padding-bottom: 4rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text-primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s var(--ease-out);
+
+    &--primary {
+      background: var(--accent);
+      color: var(--bg-deep);
+      font-weight: 600;
+
+      &:hover {
+        background: #33ffcc;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px var(--accent-glow);
+      }
+    }
+
+    &--ghost {
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+
+      &:hover {
+        color: var(--text-primary);
+        border-color: rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.03);
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  &__mark {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-sm);
+  }
+
+  &__copy,
+  &__location {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+}

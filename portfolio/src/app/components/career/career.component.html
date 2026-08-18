@@ -1,0 +1,55 @@
+<section id="journey" class="career">
+  <div class="container">
+    <div class="career__header">
+      <p class="section-label" appReveal>Career Journey</p>
+      <h2 class="section-title" appReveal>From research to global engineering teams</h2>
+      <p class="section-subtitle" appReveal>
+        A decade of building enterprise web applications across Europe and the United States —
+        from PhD research to senior roles at Fortune 500 companies.
+      </p>
+    </div>
+
+    <div class="career__timeline">
+      @for (entry of profile.career; track entry.company + entry.period; let i = $index) {
+        <article
+          class="career__entry"
+          [class.career__entry--highlight]="entry.highlight"
+          appReveal
+        >
+          <div class="career__marker">
+            <span class="career__dot"></span>
+          </div>
+
+          <div class="career__card">
+            <div class="career__card-header">
+              <div>
+                <h3 class="career__role">{{ entry.role }}</h3>
+                <p class="career__company">{{ entry.company }}</p>
+              </div>
+              <div class="career__meta">
+                <time class="career__period">{{ entry.period }}</time>
+                @if (entry.location) {
+                  <span class="career__location">{{ entry.location }}</span>
+                }
+              </div>
+            </div>
+
+            <ul class="career__desc">
+              @for (item of entry.description; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+
+            @if (entry.technologies?.length) {
+              <div class="career__tech">
+                @for (tech of entry.technologies; track tech) {
+                  <span>{{ tech }}</span>
+                }
+              </div>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
