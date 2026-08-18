@@ -5,6 +5,7 @@ import { AboutComponent } from './components/about/about.component';
 import { CareerComponent } from './components/career/career.component';
 import { PortfolioSectionComponent } from './components/portfolio-section/portfolio-section.component';
 import { TechStripComponent } from './components/tech-strip/tech-strip.component';
+import { DigitalTwinComponent } from './components/digital-twin/digital-twin.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
@@ -17,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AboutComponent,
     CareerComponent,
     PortfolioSectionComponent,
+    DigitalTwinComponent,
     FooterComponent,
   ],
   templateUrl: './app.component.html',

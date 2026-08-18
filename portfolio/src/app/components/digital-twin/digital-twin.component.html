@@ -1,0 +1,60 @@
+<section id="digital-twin" class="digital-twin">
+  <div class="container">
+    <div class="digital-twin__header">
+      <p class="section-label">Digital Twin</p>
+      <h2 class="section-title">Ask about Maroš’s journey</h2>
+      <p class="section-subtitle">
+        This AI companion answers questions about his career, roles, technologies, and education using his public profile.
+      </p>
+    </div>
+
+    <div class="digital-twin__panel">
+      <div class="digital-twin__quick-prompts" aria-label="Suggested questions">
+        @for (prompt of quickPrompts; track prompt) {
+          <button type="button" class="digital-twin__chip" (click)="askQuickPrompt(prompt)">
+            {{ prompt }}
+          </button>
+        }
+      </div>
+
+      <div class="digital-twin__messages" aria-live="polite">
+        @for (message of messages; track message; let i = $index) {
+          <div class="digital-twin__message" [class.is-user]="message.role === 'user'" [class.is-assistant]="message.role === 'assistant'">
+            <div class="digital-twin__bubble">
+              {{ message.content }}
+            </div>
+          </div>
+        }
+
+        @if (isLoading) {
+          <div class="digital-twin__message is-assistant">
+            <div class="digital-twin__bubble digital-twin__bubble--loading">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        }
+      </div>
+
+      <form class="digital-twin__composer" (ngSubmit)="sendMessage()">
+        <label class="sr-only" for="digital-twin-input">Ask the digital twin</label>
+        <textarea
+          id="digital-twin-input"
+          rows="3"
+          [(ngModel)]="draft"
+          name="draft"
+          placeholder="Ask about Maroš’s software career, education, or work experience..."
+          [disabled]="isLoading"
+        ></textarea>
+
+        <div class="digital-twin__actions">
+          <span class="digital-twin__hint">Powered by OpenRouter</span>
+          <button type="submit" class="digital-twin__submit" [disabled]="isLoading || !draft.trim()">
+            {{ isLoading ? 'Thinking...' : 'Send' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
