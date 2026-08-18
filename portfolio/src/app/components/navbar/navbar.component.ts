@@ -16,6 +16,7 @@ export class NavbarComponent {
     { label: 'About', href: '#about' },
     { label: 'Journey', href: '#journey' },
     { label: 'Portfolio', href: '#portfolio' },
+    { label: 'Digital Twin', href: '#digital-twin' },
     { label: 'Contact', href: '#contact' },
   ];
 

@@ -1,0 +1,60 @@
+<section id="digital-twin" class="digital-twin">
+  <div class="digital-twin__inner container">
+    <div class="digital-twin__intro" appReveal>
+      <p class="section-label">Digital twin</p>
+      <h2 class="section-title">Ask me about my career.</h2>
+      <p class="section-subtitle">
+        A career-aware chat trained on my portfolio facts, experience, education, publications, and project history.
+      </p>
+    </div>
+
+    <div class="digital-twin__console" appReveal>
+      <div class="digital-twin__status">
+        <span class="digital-twin__pulse" aria-hidden="true"></span>
+        <span>OpenRouter - OpenAI GPT OSS</span>
+      </div>
+
+      <div #conversation class="digital-twin__messages" aria-live="polite">
+        @for (message of messages(); track $index) {
+          <article class="message" [class.message--user]="message.role === 'user'">
+            <span class="message__author">
+              {{ message.role === 'user' ? 'You' : 'Digital Twin' }}
+            </span>
+            <p>{{ message.content }}</p>
+          </article>
+        }
+
+        @if (loading()) {
+          <article class="message message--thinking">
+            <span class="message__author">Digital Twin</span>
+            <p>Thinking...</p>
+          </article>
+        }
+
+        @if (error()) {
+          <p class="digital-twin__error">{{ error() }}</p>
+        }
+      </div>
+
+      <div class="digital-twin__prompts" aria-label="Suggested questions">
+        @for (prompt of prompts; track prompt) {
+          <button type="button" (click)="send(prompt)" [disabled]="loading()">
+            {{ prompt }}
+          </button>
+        }
+      </div>
+
+      <form class="digital-twin__form" (ngSubmit)="send()">
+        <textarea
+          name="message"
+          [(ngModel)]="draft"
+          (keydown.enter)="handleEnter($event)"
+          [disabled]="loading()"
+          placeholder="Ask about Maros's roles, education, skills, or projects..."
+          rows="3"
+        ></textarea>
+        <button type="submit" [disabled]="loading() || !draft.trim()">Send</button>
+      </form>
+    </div>
+  </div>
+</section>

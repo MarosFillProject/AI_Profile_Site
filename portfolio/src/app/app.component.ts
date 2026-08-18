@@ -6,6 +6,7 @@ import { CareerComponent } from './components/career/career.component';
 import { PortfolioSectionComponent } from './components/portfolio-section/portfolio-section.component';
 import { TechStripComponent } from './components/tech-strip/tech-strip.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DigitalTwinChatComponent } from './components/digital-twin-chat/digital-twin-chat.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AboutComponent,
     CareerComponent,
     PortfolioSectionComponent,
+    DigitalTwinChatComponent,
     FooterComponent,
   ],
   templateUrl: './app.component.html',
