@@ -1,4 +1,4 @@
-# Beginner Tutorial: Building a Portfolio Website with an AI “Digital Twin” Chatbot
+# Portfolio Website with an AI “Digital Twin” Chatbot
 
 This project is a personal portfolio website built with Angular, plus a small Node.js backend that connects to OpenRouter so visitors can ask questions about your career, education, and experience in a conversational way.
 
